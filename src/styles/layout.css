@@ -964,10 +964,95 @@
 }
 
 .hero-visual {
+  position: relative;
   min-height: 490px;
-  overflow: hidden;
+  display: grid;
+  place-items: center;
   border-radius: 46% 46% 35% 35%;
-  background: linear-gradient(150deg, #eaf4ff, #d9edff);
+  background: transparent;
+}
+
+.hero-logo {
+  width: min(115%, 620px);
+  height: auto;
+  object-fit: contain;
+}
+
+.hero-bubbles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-bubbles__bubble {
+  position: absolute;
+  width: 22px;
+  aspect-ratio: 1;
+  border: 2px solid rgba(40, 120, 181, 0.3);
+  border-radius: 50%;
+  background: rgba(190, 223, 249, 0.55);
+  animation: hero-bubble-rise 4.8s ease-in-out infinite;
+}
+
+.hero-bubbles__bubble--one {
+  top: 14%;
+  right: 17%;
+}
+
+.hero-bubbles__bubble--two {
+  top: 36%;
+  left: 13%;
+  width: 14px;
+  animation-delay: -1.2s;
+}
+
+.hero-bubbles__bubble--three {
+  right: 12%;
+  bottom: 22%;
+  width: 30px;
+  animation-delay: -2.8s;
+}
+
+.hero-bubbles__bubble--four {
+  bottom: 13%;
+  left: 25%;
+  width: 17px;
+  animation-delay: -3.7s;
+}
+
+.hero-bubbles__bubble--five {
+  top: 25%;
+  right: 5%;
+  width: 12px;
+  animation-delay: -0.7s;
+}
+
+.hero-bubbles__bubble--six {
+  top: 8%;
+  left: 28%;
+  width: 16px;
+  animation-delay: -2s;
+}
+
+.hero-bubbles__bubble--seven {
+  top: 52%;
+  right: 7%;
+  width: 19px;
+  animation-delay: -3.3s;
+}
+
+.hero-bubbles__bubble--eight {
+  bottom: 7%;
+  right: 31%;
+  width: 11px;
+  animation-delay: -1.6s;
+}
+
+.hero-bubbles__bubble--nine {
+  top: 62%;
+  left: 7%;
+  width: 25px;
+  animation-delay: -4.1s;
 }
 
 .bubble-art {
@@ -1417,6 +1502,19 @@
 
   50% {
     transform: translateY(-12px);
+  }
+}
+
+@keyframes hero-bubble-rise {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translateY(8px) scale(0.82);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: translateY(-12px) scale(1);
   }
 }
 

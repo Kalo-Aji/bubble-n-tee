@@ -10,7 +10,7 @@ const links = [
   { label: 'Contact Us', to: '/contact' },
 ]
 
-export default function Navbar({ onBook, isDarkMode, onToggleTheme }) {
+export default function Navbar({ onBook, isDarkMode, onToggleTheme, customer, onLogout }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
 
@@ -61,6 +61,18 @@ export default function Navbar({ onBook, isDarkMode, onToggleTheme }) {
           >
             <span className="theme-toggle__track" aria-hidden="true" />
           </button>
+          {customer && (
+            <button
+              type="button"
+              className="button button--light-outline nav-logout"
+              onClick={() => {
+                closeMenu()
+                onLogout()
+              }}
+            >
+              Log out
+            </button>
+          )}
           <button
             type="button"
             className="button button--primary nav-book"

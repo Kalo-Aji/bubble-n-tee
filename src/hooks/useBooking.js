@@ -3,6 +3,7 @@ import { useState } from 'react'
 export default function useBooking() {
   const [isOpen, setIsOpen] = useState(false)
   const [selectedService, setSelectedService] = useState('')
+  const [customer, setCustomer] = useState(null)
 
   function openBooking(service = '') {
     setSelectedService(service)
@@ -13,5 +14,21 @@ export default function useBooking() {
     setIsOpen(false)
   }
 
-  return { isOpen, selectedService, openBooking, closeBooking }
+  function authenticateCustomer(account) {
+    setCustomer(account)
+  }
+
+  function logoutCustomer() {
+    setCustomer(null)
+  }
+
+  return {
+    isOpen,
+    selectedService,
+    customer,
+    openBooking,
+    closeBooking,
+    authenticateCustomer,
+    logoutCustomer,
+  }
 }

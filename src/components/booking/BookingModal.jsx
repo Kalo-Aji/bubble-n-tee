@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react'
+import BookingAccess from './BookingAccess.jsx'
 import BookingForm from './BookingForm.jsx'
 
-export default function BookingModal({ isOpen, selectedService, onClose }) {
+export default function BookingModal({ isOpen, selectedService, customer, onAuthenticated, onLogout, onClose }) {
   const dialogRef = useRef(null)
   const closeRef = useRef(null)
 
@@ -54,10 +55,22 @@ export default function BookingModal({ isOpen, selectedService, onClose }) {
         ref={dialogRef}
       >
         <button className="modal-close" type="button" onClick={onClose} ref={closeRef} aria-label="Close booking dialog">×</button>
-        <p className="eyebrow">Laundry visit planner</p>
-        <h2 id="booking-title">Let’s get the details together.</h2>
-        <p className="modal-intro">Use this preview to gather your preferences. It won’t send or confirm a real booking.</p>
-        <BookingForm selectedService={selectedService} onClose={onClose} />
+        {customer ? (
+          <>
+            <div className="booking-modal__account">
+              <span>Signed in as {customer.name}</span>
+              <button className="button button--text" type="button" onClick={onLogout}>
+                Log out
+              </button>
+            </div>
+            <p className="eyebrow">Laundry visit planner</p>
+            <h2 id="booking-title">Let’s get the details together.</h2>
+            <p className="modal-intro">Your request will be saved in this browser only. Contact us to confirm availability and arrangements.</p>
+            <BookingForm selectedService={selectedService} customer={customer} onClose={onClose} />
+          </>
+        ) : (
+          <BookingAccess onAuthenticated={onAuthenticated} />
+        )}
       </section>
     </div>
   )

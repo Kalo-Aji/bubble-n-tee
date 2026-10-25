@@ -86,6 +86,7 @@
     color: var(--yellow);
   }
 
+  .nav-logout,
   .nav-book {
     margin-top: 0.65rem;
   }
@@ -118,6 +119,7 @@
 
   .hero-visual {
     min-height: min(70vw, 420px);
+    width: 100%;
     margin-inline: 0.5rem;
   }
 
@@ -468,7 +470,22 @@
 }
 
 :root[data-theme="dark"] .hero-visual {
-  background: linear-gradient(150deg, #202c3a, #26384a);
+  background: transparent;
+}
+
+:root[data-theme="dark"] .hero-trust {
+  color: var(--text);
+  background: var(--surface);
+}
+
+:root[data-theme="dark"] .hero-trust span {
+  color: var(--heading);
+}
+
+:root[data-theme="dark"] .hero-copy .eyebrow {
+  color: var(--heading);
+  border-color: var(--border);
+  background: var(--surface);
 }
 
 :root[data-theme="dark"] .highlight-card,

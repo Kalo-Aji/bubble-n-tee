@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import logo from '../assets/images/Logo.png'
 import Button from '../components/common/Button.jsx'
 import FeatureCard from '../components/common/FeatureCard.jsx'
 import ProcessStep from '../components/common/ProcessStep.jsx'
@@ -36,21 +37,18 @@ export default function Home({ onBook }) {
             </div>
             <div className="hero-trust"><span aria-hidden="true">✦</span> Everyday laundry, extra-large loads, and home linens</div>
           </div>
-          <div className="hero-visual" role="img" aria-label="Playful blue and yellow bubbles around a clean laundry basket illustration">
-            <div className="bubble-art">
-              <span className="bubble-art__orbit bubble-art__orbit--one" />
-              <span className="bubble-art__orbit bubble-art__orbit--two" />
-              <span className="bubble-art__bubble bubble-art__bubble--one" />
-              <span className="bubble-art__bubble bubble-art__bubble--two" />
-              <span className="bubble-art__bubble bubble-art__bubble--three" />
-              <span className="bubble-art__bubble bubble-art__bubble--four" />
-              <div className="bubble-art__basket">
-                <span className="bubble-art__shirt">✦</span>
-                <span className="bubble-art__towel" />
-                <span className="bubble-art__basket-front"><i /><i /><i /><i /></span>
-              </div>
-              <span className="bubble-art__spark bubble-art__spark--one">✳</span>
-              <span className="bubble-art__spark bubble-art__spark--two">✦</span>
+          <div className="hero-visual">
+            <img className="hero-logo" src={logo} alt="Bubble N Tee Laundry Shop" />
+            <div className="hero-bubbles" aria-hidden="true">
+              <span className="hero-bubbles__bubble hero-bubbles__bubble--one" />
+              <span className="hero-bubbles__bubble hero-bubbles__bubble--two" />
+              <span className="hero-bubbles__bubble hero-bubbles__bubble--three" />
+              <span className="hero-bubbles__bubble hero-bubbles__bubble--four" />
+              <span className="hero-bubbles__bubble hero-bubbles__bubble--five" />
+              <span className="hero-bubbles__bubble hero-bubbles__bubble--six" />
+              <span className="hero-bubbles__bubble hero-bubbles__bubble--seven" />
+              <span className="hero-bubbles__bubble hero-bubbles__bubble--eight" />
+              <span className="hero-bubbles__bubble hero-bubbles__bubble--nine" />
             </div>
           </div>
         </div>
